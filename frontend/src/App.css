@@ -1,0 +1,13 @@
+.barplot {
+  background-color: aqua;
+}
+.dark,
+.light > button {
+  background-color: black;
+  color: white;
+}
+.light,
+.dark > button {
+  background-color: white;
+  color: black;
+}
