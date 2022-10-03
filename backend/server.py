@@ -38,6 +38,12 @@ def selected():
 
     year_dict={'Year':select_country['Year'].to_list(),
                 "Value":select_country['Value'].to_list()}
+        
+    dfle=pd.read_csv("Life-expectancy.csv",header=2)
+    meltle=dfle.melt(id_vars=["Country Name","Country Code","Indicator Name","Indicator Code"],
+         var_name="Year",
+         value_name="Life Expectancy")
+    dflifeexpectancy=dflifeexpectancy.loc[dflifeexpectancy["Country Name"].isin([search])]
 
     return jsonify(data=year_dict)
 
