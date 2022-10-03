@@ -7,22 +7,22 @@ class Bar extends React.Component {
   constructor(props) {
     super(props);
 
-    const options = {
-      method: "GET",
-      url: "https://ajayakv-rest-countries-v1.p.rapidapi.com/rest/v1/all",
-      headers: {
-        "x-rapidapi-host": "ajayakv-rest-countries-v1.p.rapidapi.com",
-        "x-rapidapi-key": "cJvLRNK0GfdM9WSMbQe3inU7REn8JVy5",
-      },
-    };
-    axios
-      .request(options)
-      .then(function (response) {
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
+    //   const options = {
+    //     method: "GET",
+    //     url: "https://ajayakv-rest-countries-v1.p.rapidapi.com/rest/v1/all",
+    //     headers: {
+    //       "x-rapidapi-host": "ajayakv-rest-countries-v1.p.rapidapi.com",
+    //       "x-rapidapi-key": "cJvLRNK0GfdM9WSMbQe3inU7REn8JVy5",
+    //     },
+    //   };
+    //   axios
+    //     .request(options)
+    //     .then(function (response) {
+    //       console.log(response.data);
+    //     })
+    //     .catch(function (error) {
+    //       console.error(error);
+    //     });
   }
   render() {
     return (

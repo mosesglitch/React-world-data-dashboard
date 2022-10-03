@@ -24,9 +24,7 @@ class Chloropleth extends Component {
       url: `/chloropleth`, //TODO: update request URL
       type: "GET",
       success: (result) => {
-        console.log("res", result);
         this.setState({ gdp: result.chloropleth });
-        console.log(this.state.gdp.country);
         return;
       },
       error: (error) => {

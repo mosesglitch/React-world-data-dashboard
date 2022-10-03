@@ -14,17 +14,17 @@ def country_chloropleth():
 
     return jsonify(chloropleth=chloropleth)
 
-@app.route("/fofpdn",methods=["GET"])
+@app.route("/bubble",methods=["GET"])
 def factors_of_production():
     dfecon=pd.read_csv("Size_of_the_economy.csv")
     economic_size={"Country":dfecon["Country"].to_list(),
-    "Population millions (2021)":dfecon["Population millions (2021)"].to_list(),
-    "Surface area sq. km thousands (2018)":dfecon["Surface area sq. km thousands (2018)"].to_list(),
-    "Gross national income per capita, Atlas method":dfecon["Gross national income per capita, Atlas method"].to_list(),
-    "Purchasing power parity gross national income2021 per capita (2021)":dfecon["Purchasing power parity gross national income2021 per capita (2021)"].to_list(),
-    "Gross domestic product per capita%growth(2021)":dfecon["Gross domestic product per capita%growth(2021)"].to_list(),
+    "population":dfecon["Population millions (2021)"].to_list(),
+    "surfaceArea":dfecon["Surface area sq. km thousands (2018)"].to_list(),
+    "GNIPerCapita":dfecon["Gross national income per capita, Atlas method"].to_list(),
+    "PPPGNIperCapita":dfecon["Purchasing power parity gross national income2021 per capita (2021)"].to_list(),
+    "GDPpercapita(%)growth":dfecon["Gross domestic product per capita%growth(2021)"].to_list(),
     }
-    return jsonify(economiSize=economic_size)
+    return jsonify(economicSize=economic_size)
 
 @app.route("/members",methods=['POST'])
 def selected():

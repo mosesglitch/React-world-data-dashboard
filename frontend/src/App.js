@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import $ from "jquery";
 import Bar from "./components/Bar";
 import "./App.css";
+import Bubbleplot from "./components/Bubbleplot";
 import Chloropleth from "./components/Chloropleth";
 // import Pie from "./components/Pie";
 const App = () => {
@@ -21,7 +22,6 @@ const App = () => {
       },
       crossDomain: true,
       success: (result) => {
-        console.log(result.data);
         setY(result.data);
         return;
       },
@@ -47,6 +47,7 @@ const App = () => {
       </form>
       <Bar saved={Y} country={country} />
       <Chloropleth />
+      <Bubbleplot />
     </div>
   );
 };
