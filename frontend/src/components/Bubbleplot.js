@@ -31,9 +31,9 @@ class Bubbleplot extends Component {
       <Plot
         data={[
           {
-            x: this.state.econData.population,
-            y: this.state.econData.surfaceArea,
-            type: "scatter",
+            x: this.state.econData.Country,
+            y: this.state.econData.population,
+            type: "bar",
             mode: "markers",
             marker: {
               color: "blue",
