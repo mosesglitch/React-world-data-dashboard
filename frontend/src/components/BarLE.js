@@ -14,19 +14,37 @@ class BarLE extends Component {
       url: `/lifeexpectancy`, //TODO: update request URL
       type: "GET",
       success: (result) => {
-        // console.log("res", result);
+        console.log("res", result);
         this.setState({ lifeex: result.data });
         console.log("slife", this.state.lifeex);
         return;
       },
       error: (error) => {
-        alert("Unable to load categories. Please try your request again");
+        alert(
+          "Unable to load lifeexpectancy data. Please try your request again"
+        );
         return;
       },
     });
   }
   render() {
-    return <div></div>;
+    return (
+      <Plot
+        data={[
+          {
+            x: this.state.lifeex.Yearle,
+            y: this.state.lifeex.lifeex,
+            mode: "lines+markers",
+          },
+        ]}
+        // data = [ trace1, trace2, trace3 ];
+
+        var
+        layout={{
+          title: "Line and Scatter Plot",
+        }}
+      />
+    );
   }
 }
 

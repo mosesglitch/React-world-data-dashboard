@@ -34,7 +34,28 @@ const App = () => {
       },
     });
   }, [country]);
-
+  useEffect(() => {
+    $.ajax({
+      url: `/country`,
+      type: "POST",
+      dataType: "json",
+      contentType: "application/json",
+      data: JSON.stringify({ selected_country: country }),
+      xhrFields: {
+        withCredentials: true,
+      },
+      crossDomain: true,
+      success: (result) => {
+        setY(result.data);
+        console.log("y");
+        return;
+      },
+      error: (error) => {
+        alert("Unable to load data. Please try your request again");
+        return;
+      },
+    });
+  }, [country]);
   return (
     <div className={`body ${theme ? "dark" : "light"}`}>
       <button onClick={() => setTheme(!theme)}>
