@@ -5,6 +5,8 @@ import Bar from "./components/Bar";
 import "./App.css";
 import Bubbleplot from "./components/Bubbleplot";
 import Chloropleth from "./components/Chloropleth";
+import Pie from "./components/Pie";
+import BarLE from "./components/BarLE";
 // import Pie from "./components/Pie";
 const App = () => {
   const [Y, setY] = useState({});
@@ -23,10 +25,11 @@ const App = () => {
       crossDomain: true,
       success: (result) => {
         setY(result.data);
+        console.log("y");
         return;
       },
       error: (error) => {
-        alert("Unable to load questions. Please try your request again");
+        alert("Unable to load data. Please try your request again");
         return;
       },
     });
@@ -48,6 +51,8 @@ const App = () => {
       <Bar saved={Y} country={country} />
       <Chloropleth />
       <Bubbleplot />
+      <Pie />
+      <BarLE />
     </div>
   );
 };

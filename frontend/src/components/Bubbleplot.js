@@ -15,9 +15,9 @@ class Bubbleplot extends Component {
       url: `/bubble`, //TODO: update request URL
       type: "GET",
       success: (result) => {
-        console.log("res", result);
+        // console.log("res", result);
         this.setState({ econData: result.economicSize });
-        console.log("state", this.state.econData);
+        // console.log("state", this.state.econData);
         return;
       },
       error: (error) => {
@@ -32,7 +32,7 @@ class Bubbleplot extends Component {
         data={[
           {
             x: this.state.econData.Country,
-            y: this.state.econData.population,
+            y: this.state.econData.density,
             type: "bar",
             mode: "markers",
             marker: {
